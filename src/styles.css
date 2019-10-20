@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+    height: 100%;
+    font-size: 12px;
+    font-family: 'open sans', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-size: 15px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+nz-layout.ant-layout,
+nz-header.ant-layout-header,
+nz-footer.ant-layout-footer,
+nz-content {
+    background-color: #FFFFFF;
+}
+
+.ant-layout-footer,
+.ant-form label,
+.ant-input,
+.ant-table,
+.ant-breadcrumb,
+.ant-breadcrumb .anticon,
+.ant-btn {
+    font-size: 12px;
+}
+
+nz-layout {
+    min-height: 100%;
+    height: 100%;
+}
+
+nz-content {
+    font-family: 'PingFang SC', 'open sans', 'Segoe UI', ;
+}
+
+div.logo {
+    text-align: center;
+}
+
+div.logo img {
+    width: 40%;
+}
+
+.ant-notification-notice {
+    border: 1px solid #dadada;
+}
+
+.ant-notification-notice {
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.ant-form-item {
+    margin: 0 0 15px;
+    padding: 0;
+    color: rgba(0, 0, 0, .65);
+    font-size: 12px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    list-style: none;
+    -webkit-font-feature-settings: 'tnum';
+    font-feature-settings: 'tnum';
+    vertical-align: top;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.width-100-per {
+    width: 100%;
+}
+
+#paymentStartDate,
+nz-picker,
+.ant-calendar-picker {
+    width: 100%;
+}

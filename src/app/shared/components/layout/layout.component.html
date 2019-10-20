@@ -1,0 +1,22 @@
+<nz-layout>
+    <nz-header class="am-header">
+        <h1 class="float-left">Employee PaySlip App</h1>
+    </nz-header>
+
+    <nz-layout class="am-layout">
+        <nz-sider [nzWidth]="width" class="am-sider">
+            <ul nz-menu [nzMode]="'inline'">
+                <li nz-menu-item routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: false}">
+                    <a routerLink="/generate-payslip"><span class="nav-text">Generate Payslip</span></a>
+                </li>
+                <li nz-menu-item routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: false}">
+                    <a routerLink="/payslips"><span class="nav-text">Payslips</span></a>
+                </li>
+            </ul>
+        </nz-sider>
+
+        <nz-content class="am-content">
+            <router-outlet></router-outlet>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

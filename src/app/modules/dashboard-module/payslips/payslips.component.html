@@ -1,0 +1,41 @@
+<div class="viewer">
+    <nz-layout class="viewer-layout">
+        <nz-content class="viewer-content">
+            <div nz-row>
+                <div nz-col [nzSpan]="24">
+                    <h2>Payslips</h2>
+                </div>
+            </div>
+
+            <br>
+
+            <div>
+                <nz-table #payslipTable [nzData]="payslips">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pay Period</th>
+                            <th>Gross Income</th>
+                            <th>Income Tax</th>
+                            <th>Net Income</th>
+                            <th>Super Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of payslipTable.data">
+                            <td>{{ data.Name }}</td>
+                            <td>{{ getDatePeriod(data.PaymentStartDate) }}</td>
+                            <td>{{ data.GrossIncome | number:'1.0-0' }}</td>
+                            <td>{{ data.NetIncomeTax | number:'1.0-0' }}</td>
+                            <td>{{ data.NetIncome | number:'1.0-0' }}</td>
+                            <td>{{ data.SuperAmount | number:'1.0-0' }}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+            <!--
+            <nz-empty *ngIf="payslips.length == 0" [nzNotFoundContent]="'No Payslip Found'"></nz-empty>
+            -->
+        </nz-content>
+    </nz-layout>
+</div>

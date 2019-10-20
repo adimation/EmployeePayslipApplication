@@ -1,0 +1,9 @@
+.dashboard-content h1 {
+    /* text-align: center; */
+    margin-top: 50px;
+}
+
+#annualSalary,
+#superRate {
+    width: 100%;
+}

@@ -1,0 +1,63 @@
+<div class="dashboard">
+    <nz-layout class="dashboard-layout">
+        <nz-content class="dashboard-content">
+
+            <h2>Generate Employee Payslip</h2>
+
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="firstName">First Name</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                        <input nz-input formControlName="firstName" id="firstName" />
+                        <nz-form-explain *ngIf="validateForm.get('firstName')?.dirty && validateForm.get('firstName')?.errors">
+                            The input is required!
+                        </nz-form-explain>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastName">Last Name</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                        <input nz-input formControlName="lastName" id="lastName" />
+                        <nz-form-explain *ngIf="validateForm.get('lastName')?.dirty && validateForm.get('lastName')?.errors">
+                            The input is required!
+                        </nz-form-explain>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="annualSalary">Annual Salary</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                        <nz-input-number formControlName="annualSalary" id="annualSalary" [nzMin]="1" [nzStep]="1" [nzFormatter]="formatterDollar" [nzParser]="parserDollar"></nz-input-number>
+                        <nz-form-explain *ngIf="validateForm.get('annualSalary')?.dirty && validateForm.get('annualSalary')?.errors">
+                            The input is required!
+                        </nz-form-explain>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="superRate">Super Rate</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                        <nz-input-number formControlName="superRate" id="superRate" [nzMax]="12" [nzFormatter]="formatterPercent" [nzParser]="parserPercent"></nz-input-number>
+                        <nz-form-explain *ngIf="validateForm.get('superRate')?.dirty && validateForm.get('superRate')?.errors">
+                            The input is required!
+                        </nz-form-explain>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="paymentStartDate">Payment Start Date</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24">
+                        <nz-month-picker formControlName="paymentStartDate" id="paymentStartDate"></nz-month-picker>
+                        <nz-form-explain *ngIf="validateForm.get('paymentStartDate')?.dirty && validateForm.get('paymentStartDate')?.errors">
+                            The input is required!
+                        </nz-form-explain>
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item nz-row style="margin-bottom:8px;">
+                    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                        <button nz-button nzType="primary">Generate Payslip</button>
+                    </nz-form-control>
+                </nz-form-item>
+            </form>
+
+        </nz-content>
+    </nz-layout>
+</div>
