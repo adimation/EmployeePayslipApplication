@@ -19,16 +19,18 @@
                             <th>Income Tax</th>
                             <th>Net Income</th>
                             <th>Super Amount</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let data of payslipTable.data">
+                        <tr *ngFor="let data of payslipTable.data; let i = index">
                             <td>{{ data.Name }}</td>
                             <td>{{ getDatePeriod(data.PaymentStartDate) }}</td>
                             <td>{{ data.GrossIncome | number:'1.0-0' }}</td>
                             <td>{{ data.NetIncomeTax | number:'1.0-0' }}</td>
                             <td>{{ data.NetIncome | number:'1.0-0' }}</td>
                             <td>{{ data.SuperAmount | number:'1.0-0' }}</td>
+                            <td><a (click)="removePayslip(i)">Remove</a></td>
                         </tr>
                     </tbody>
                 </nz-table>

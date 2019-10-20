@@ -25,4 +25,8 @@ export class EmployeePayslipService extends BaseService {
     public getPayslips(): EmployeePayslipDTO[] {
         return plainToClass(EmployeePayslipDTO, this.payslips);
     }
+
+    public removePayslip(index: number): void {
+        this.payslips.splice(index, 1);
+    }
 }

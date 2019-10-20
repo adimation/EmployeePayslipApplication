@@ -4,7 +4,6 @@ import { BaseComponent } from 'src/app/core/abstraction/base-component';
 import { ApplicationService } from 'src/app/core/services/application.service';
 import { EmployeePayslipDTO } from 'src/app/models/employee-payslip-dto';
 import { EmployeePayslipService } from 'src/app/services/employee-payslip.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
     selector: 'app-payslips',
@@ -23,6 +22,10 @@ export class PayslipsComponent extends BaseComponent implements OnInit {
     }
 
     public ngOnInit(): void {
+        this.init();
+    }
+
+    public init(): void {
         this.payslips = this.empPayslipService.getPayslips();
     }
 
@@ -32,5 +35,10 @@ export class PayslipsComponent extends BaseComponent implements OnInit {
 
     private endOfMonth(date): Date {
         return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    }
+
+    public removePayslip(index: number): void {
+        this.empPayslipService.removePayslip(index);
+        this.init();
     }
 }
