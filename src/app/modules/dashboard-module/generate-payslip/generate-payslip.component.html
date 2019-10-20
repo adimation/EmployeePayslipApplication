@@ -35,7 +35,7 @@
                 <nz-form-item>
                     <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="superRate">Super Rate</nz-form-label>
                     <nz-form-control [nzSm]="14" [nzXs]="24">
-                        <nz-input-number formControlName="superRate" id="superRate" [nzMax]="12" [nzFormatter]="formatterPercent" [nzParser]="parserPercent"></nz-input-number>
+                        <nz-input-number formControlName="superRate" id="superRate" [nzMin]="0" [nzMax]="12" [nzFormatter]="formatterPercent" [nzParser]="parserPercent"></nz-input-number>
                         <nz-form-explain *ngIf="validateForm.get('superRate')?.dirty && validateForm.get('superRate')?.errors">
                             The input is required!
                         </nz-form-explain>
