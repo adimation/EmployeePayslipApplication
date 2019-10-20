@@ -10,6 +10,10 @@ RXJS 6+,
 
 Typescript 3+
 
+## Assumptions
+
+Tax data will be taken from API in real world senario and should be handled on backend for security. Right now static calculation is being done in model which is independent from time period of payslip.
+
 ## Install Dependencies
 
 Run `npm install` to install node modules
